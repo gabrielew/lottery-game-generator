@@ -4,10 +4,11 @@ import { useLotteryGame } from "./hooks/useLotteryGame";
 import "./styles.css";
 
 export default () => {
-  const { game, generateGame, getLotteryGameHistory } = useLotteryGame();
-  const { copy } = useClipboard();
   const maxNumberRef = useRef<HTMLInputElement>(null);
   const amountOfNumbersRef = useRef<HTMLInputElement>(null);
+
+  const { game, generateGame, getLotteryGameHistory } = useLotteryGame();
+  const { copy } = useClipboard();
 
   const lastLotteryGames = useMemo(() => getLotteryGameHistory(5), [game]);
 
